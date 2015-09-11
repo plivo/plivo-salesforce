@@ -33,7 +33,7 @@ This will upload our helper library to your Salesforce Organization and give you
 Quickstart
 ==========
 
-Getting started with the Plivo API couldn't be easier. 
+Getting started with the Plivo API couldn't be easier.
 
 ### Make an Outbound Phone Call
 
@@ -59,7 +59,7 @@ Note: If you are using a Plivo Trial account, you can only make calls to phone n
 ```apex
 String api_key = 'Your Auth_ID';
 String api_token = 'Your Auth_Token';
-RestAPI api = new RestAPI(api_key, api_token, 'v1');
+PlivoRestAPI api = new PlivoRestAPI(api_key, api_token, 'v1');
 
 Map<String, String> params = new Map<String, String> ();
 params.put('src','1111111111');
@@ -67,7 +67,7 @@ params.put('dst','2222222222');
 params.put('answer_url', 'https://s3.amazonaws.com/static.plivo.com/answer.xml');
 params.put('answer_method','GET');
 
-Call PlaceCallResponse = api.makeCall(params);
+PlivoCall call = api.makeCall(params);
 ```
 
 #### Sample Response
@@ -114,7 +114,7 @@ params.put('src','1111111111');
 params.put('dst','2222222222');
 params.put('text','Hello, how are you?');
 
-MessageResponse SendMsgResponse = api.sendMessage(params);
+PlivoMessageResponse message = api.sendMessage(params);
 ```
 #### Sample Response
 ```

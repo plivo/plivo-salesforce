@@ -6,18 +6,20 @@
       <members>PlivoApplicationMeta</members>
       <members>PlivoBulkCall</members>
       <members>PlivoBuyNumber</members>
+      <members>PlivoCall</members>
       <members>PlivoCDR</members>
       <members>PlivoCDRFactory</members>
       <members>PlivoCDRMeta</members>
-      <members>PlivoCall</members>
       <members>PlivoConferenceXML</members>
       <members>PlivoDialNumberXML</members>
       <members>PlivoDialUserXML</members>
       <members>PlivoDialXML</members>
       <members>PlivoDtmfXML</members>
+      <members>PlivoElement</members>
       <members>PlivoEndpoint</members>
       <members>PlivoEndpointFactory</members>
       <members>PlivoEndpointMeta</members>
+      <members>PlivoException</members>
       <members>PlivoGenericResponse</members>
       <members>PlivoGetDigits</members>
       <members>PlivoGetDigitsXML</members>
@@ -33,18 +35,14 @@
       <members>PlivoNumberResponse</members>
       <members>PlivoNumberSearchFactory</members>
       <members>PlivoNumberStatus</members>
-      <members>PlivoPackageTest</members>
       <members>PlivoPhoneNumber</members>
       <members>PlivoPhoneNumberSearchFactory</members>
       <members>PlivoPlayXML</members>
-      <members>PlivoPlivoElement</members>
-      <members>PlivoPlivoException</members>
-      <members>PlivoPlivoResponse</members>
       <members>PlivoRecord</members>
       <members>PlivoRecordXML</members>
       <members>PlivoRedirectXML</members>
+      <members>PlivoResponse</members>
       <members>PlivoRestApi</members>
-      <members>PlivoSendMessage</members>
       <members>PlivoSpeakXML</members>
       <members>PlivoSubAccount</members>
       <members>PlivoSubAccountFactory</members>
