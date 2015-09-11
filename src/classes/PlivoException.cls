@@ -1,0 +1,1 @@
+public class PlivoException extends Exception { }

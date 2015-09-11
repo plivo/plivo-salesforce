@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <customSettingsVisibility>Protected</customSettingsVisibility>
+    <description>Plivo App Config</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AuthId__c</fullName>
+        <externalId>false</externalId>
+        <label>AuthId</label>
+        <length>50</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AuthToken__c</fullName>
+        <externalId>false</externalId>
+        <label>AuthToken</label>
+        <length>50</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Plivo Config</label>
+</CustomObject>
