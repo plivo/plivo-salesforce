@@ -7,6 +7,7 @@ With this helper library you'll be able to:
 * Make requests to Plivo's [REST API](http://www.plivo.com/docs/api)
 * Control phone calls and respond to text messages in real time with [XML](http://www.plivo.com/docs/api/xml)
 * Embed [Plivo Client](http://www.plivo.com/docs/sdk/web/) in-browser calling in your Salesforce and Force.com apps
+
 Installation
 ============
 We've made it easy to get started. Just grab the code from GitHub and deploy it to your Salesforce org with the included Ant script.
@@ -29,13 +30,14 @@ We've made it easy to get started. Just grab the code from GitHub and deploy it 
     ```
 
 Now all the library code is in your org and you're ready to start coding!
+
 Quickstart
 ==========
 
 Getting started with the Plivo API couldn't be easier. For example, the following code makes a call using the Plivo REST API.
 
-Make an Outbound Phone Call
------------
+### Make an Outbound Phone Call
+
 You can make outbound phone calls to landlines, mobiles, and SIP endpoints (e.g., softphones), in any of our [200+ coverage countries](https://www.plivo.com/international-coverage).
 
 #### Process
@@ -72,24 +74,18 @@ Call PlaceCallResponse = api.makeCall(params);
 #### Sample Response
 
 ```
-Sample output - Synchronous Request
+Sample output
 (201, {
        u'message': u'call fired',
        u'request_uuid': u'85b1d45d-bc12-47f5-89c7-ae4a2c5d5713',
        u'api_id': u'ad0e27a8-9008-11e4-b932-22000ac50fac'
    }
 )
-
-Sample output - Asynchronous Request
-(201, {
-       u'message': u'async api spawned',
-       u'api_id': u'ad0e27a8-9008-11e4-b932-22000ac50fac'
-   }
-)
 ```
-Check out [this Getting Started page](https://www.plivo.com/docs/getting-started/making-outbound-calls/) or the [full Call API documentation](https://www.plivo.com/docs/api/call/) for more details.
-Send an SMS
------------
+Check out [this Getting Started page](https://www.plivo.com/docs/getting-started/making-outbound-calls/) or the full [Call API documentation](https://www.plivo.com/docs/api/call/) for more details.
+
+### Send an SMS
+
 This tutorial will show you how to send an outbound Short Message Service (SMS) (i.e. text message) using Plivo’s REST API. This can be used in any web or mobile application that requires communication with end users via SMS text messages including delivery notifications, system alerts, two-factor authentication and even rideshare alerts.
 
 Plivo’s Message API supports Unicode UTF-8 encoded texts, which means that you can send messages in any language. The Message API also automatically splits long messages at 160 characters and concatenates them into a single SMS on the receiver’s end. Delivery reports are also automatically supported in networks where they are provided by the operator.
@@ -127,4 +123,4 @@ MessageResponse SendMsgResponse = api.sendMessage(params);
     }
 )
 ```
-Check out [this Getting Started page](https://www.plivo.com/docs/getting-started/send-a-single-sms/) or the [full Message API documentation](https://www.plivo.com/docs/api/message/) for more details.
+Check out [this Getting Started page](https://www.plivo.com/docs/getting-started/send-a-single-sms/) or the full [Message API documentation](https://www.plivo.com/docs/api/message/) for more details.
