@@ -19,6 +19,8 @@ Getting started with Plivo and Salesforce is very simple. Just follow these step
 
 
 1. Install the [Force.com Migration Tool](http://www.salesforce.com/us/developer/docs/daas/Content/forcemigrationtool_install.htm) plugin for Ant, if you don't already have it.
+  - Click [Here](https://na1.salesforce.com/dwnld/SfdcAnt/salesforce_ant_34.0.zip) to download the Force.com Migration Tool.
+  - Unzip the file and put the `ant-salesforce.jar` in the `plivo-salesforce` directory you cloned in step 1.
 
 1. Edit `install/build.properties` to insert your Salesforce username and password.  Since you will be using the API to access Salesforce, remember to [append your Security Token](http://www.salesforce.com/us/developer/docs/api/Content/sforce_api_concepts_security.htm#topic-title_login_token) to your password.
 

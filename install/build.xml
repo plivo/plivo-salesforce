@@ -3,6 +3,12 @@
     <property file="build.properties"/>
     <property environment="env"/>
 
+    <taskdef resource="com/salesforce/antlib.xml" uri="antlib:com.salesforce">
+        <classpath>
+            <pathelement location="../ant-salesforce.jar" />
+        </classpath>
+    </taskdef>
+
     <!-- Deploy the unpackaged set of metadata retrieved with retrieveUnpackaged -->
     <target name="deployPlivo" description="Deploys the Plivo Helper Library for Salesforce to your organization">
       <echo message="Deploying Plivo Helper Library for Salesforce..."/>
