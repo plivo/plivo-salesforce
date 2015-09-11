@@ -89,8 +89,10 @@ Check out [this Getting Started page](https://www.plivo.com/docs/getting-started
 This tutorial will show you how to send an outbound Short Message Service (SMS) (i.e. text message) using Plivo’s REST API. This can be used in any web or mobile application that requires communication with end users via SMS text messages including delivery notifications, system alerts, two-factor authentication and even rideshare alerts.
 
 Plivo’s Message API supports Unicode UTF-8 encoded texts, which means that you can send messages in any language. The Message API also automatically splits long messages at 160 characters and concatenates them into a single SMS on the receiver’s end. Delivery reports are also automatically supported in networks where they are provided by the operator.
+
 #### Prerequisites
 - Sign up for a free [Plivo trial account](https://manage.plivo.com/accounts/register/)
+
 #### Implementation
 1. Copy the code below into your Apex Class.
 2. Replace `'Your Auth_ID'` and `'Your Auth_Token'` with the AUTH ID and AUTH TOKEN found on your [Plivo dashboard](https://manage.plivo.com/dashboard/).
