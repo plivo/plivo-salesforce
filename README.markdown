@@ -83,6 +83,8 @@ Sample output
 ```
 Check out [this Getting Started page](https://www.plivo.com/docs/getting-started/making-outbound-calls/) or the full [Call API documentation](https://www.plivo.com/docs/api/call/) for more details.
 
+- - -
+
 ### Send an SMS
 
 This tutorial will show you how to send an outbound Short Message Service (SMS) (i.e. text message) using Plivo’s REST API. This can be used in any web or mobile application that requires communication with end users via SMS text messages including delivery notifications, system alerts, two-factor authentication and even rideshare alerts.
