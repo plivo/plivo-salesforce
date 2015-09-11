@@ -43,58 +43,34 @@ Make a Call
 -----------
 This sample calls the `to` phone number and plays music.  The `from` number must be a [verified number](https://www.plivo.com/user/account/phone-numbers/verified) on your Plivo account.
 
-```javascript
+```apex
 // Find your Plivo API credentials at https://www.plivo.com/user/account
-String account = 'ACXXXXXXXXXXXXXXXXX';
-String token = 'YYYYYYYYYYYYYYYYYY';
+String api_key = 'XXXXXXXXXXXXXXXXXXXX';
+String api_token = 'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY';
+RestAPI api = new RestAPI(api_key, api_token, 'v1');
 
-PlivoRestClient client = new PlivoRestClient(account, token);
+Map<String, String> params = new Map<String, String> ();
+params.put('src','1111111111');
+params.put('dst','2222222222');
+params.put('answer_url', 'http://www.example.com/dial.xml');
+params.put('answer_method','GET');
 
-Map<String,String> params = new Map<String,String> {
-        'To'   => '9991231234',
-        'From' => '9991231234',
-        'Url'  => 'http://twimlets.com/holdmusic?Bucket=com.plivo.music.ambient'
-    };
-PlivoCall call = client.getAccount().getCalls().create(params);
+Call PlaceCallResponse = api.makeCall(params);
 ```
 
 Send an SMS
 -----------
 This sample texts *Hello there!* to the `to` phone number.  The `from` number must be a number which you have purchased from Plivo. Unlike voice calls, SMS messages cannot be sent from a verified number.
 
-```javascript
-String account = 'ACXXXXXXXXXXXXXXXXX';
-String token = 'YYYYYYYYYYYYYYYYYY';
-PlivoRestClient client = new PlivoRestClient(account, token);
+```apex
+String api_key = 'XXXXXXXXXXXXXXXXXXXX';
+String api_token = 'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY';
+RestAPI api = new RestAPI(api_key, api_token, 'v1');
 
-Map<String,String> params = new Map<String,String> {
-        'To'   => '+12316851234',
-        'From' => '+15555555555',
-        'Body' => 'Hello there!'
-    };
-PlivoSMS sms = client.getAccount().getSMSMessages().create(params);
+Map<String, String> params = new Map<String, String> ();
+params.put('src','1111111111');
+params.put('dst','2222222222');
+params.put('text','Hello, how are you?');
+
+MessageResponse SendMsgResponse = api.sendMessage(params);
 ```
-
-Generate TwiML
---------------
-
-To control phone calls, your application needs to output [TwiML](http://www.plivo.com/docs/api/xml/). Use `PlivoTwiML.Response` to easily create a TwiML document.
-
-```javascript
-PlivoTwiML.Response r = new PlivoTwiML.Response();
-PlivoTwiML.Play p = new PlivoTwimL.Play('https://api.plivo.com/cowbell.mp3');
-p.setLoop(5);
-r.append(p);
-System.debug(r.toXML());
-```
-
-```xml
-<Response><Play loop="5">https://api.plivo.com/cowbell.mp3</Play><Response>
-```
-
-
-
-Next Steps
-==========
-
-The full power of the Plivo API is at your fingertips. Visit the [full documentation](http://readthedocs.org/docs/plivo-salesforce) for advanced topics.
