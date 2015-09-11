@@ -1,13 +1,13 @@
 public class PlivoCDRFactory {
 	public Integer server_code ;
 
-    public CDRMeta meta ;
+    public PlivoCDRMeta meta ;
 
     public String error ;
 
     public String api_id ;
 
-    public List<CDR> objects ;
+    public List<PlivoCDR> objects ;
 
     public PlivoCDRFactory() {
     	// empty

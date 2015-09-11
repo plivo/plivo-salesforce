@@ -2,11 +2,11 @@ public class PlivoMDRFactory {
 
 	public Integer server_code ;
 
-    public MDRMeta meta ;
+    public PlivoMDRMeta meta ;
 
     public String api_id ;
 
-    public List<MDR> objects ;
+    public List<PlivoMDR> objects ;
 
     public String error;
 

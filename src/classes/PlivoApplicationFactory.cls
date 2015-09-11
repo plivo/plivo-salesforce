@@ -1,9 +1,9 @@
 public class PlivoApplicationFactory {
 	public Integer server_code ;
 
-    public List<Application> objects ;
+    public List<PlivoApplication> objects ;
 
-    public ApplicationMeta meta ;
+    public PlivoApplicationMeta meta ;
 
     public String api_id ;
 

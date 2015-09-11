@@ -27,9 +27,9 @@
       <members>PlivoLiveCall</members>
       <members>PlivoLiveCallFactory</members>
       <members>PlivoMessage</members>
-      <members>PlivoMessageFactory</members>
-      <members>PlivoMessageMeta</members>
-      <members>PlivoMessageResponse</members>
+      <members>PlivoMDRFactory</members>
+      <members>PlivoMDRMeta</members>
+      <members>PlivoMDR</members>
       <members>PlivoMessageXML</members>
       <members>PlivoNumberMeta</members>
       <members>PlivoNumberResponse</members>

@@ -1,13 +1,13 @@
 public class PlivoNumberSearchFactory {
 	public Integer server_code ;
 
-    public NumberMeta meta ;
+    public PlivoNumberMeta meta ;
 
     public String api_id ;
 
     public String error ;
 
-    public List<NumberResponse> objects ;
+    public List<PlivoNumberResponse> objects ;
 
     public PlivoNumberSearchFactory() {
         // empty

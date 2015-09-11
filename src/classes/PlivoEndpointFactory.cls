@@ -1,13 +1,13 @@
 public class PlivoEndpointFactory {
 	public Integer server_code ;
 
-    public EndpointMeta meta ;
+    public PlivoEndpointMeta meta ;
 
     public String error ;
 
     public String api_id ;
 
-    public List<Endpoint> objects ;
+    public List<PlivoEndpoint> objects ;
 
     public PlivoEndpointFactory() {
         // empty

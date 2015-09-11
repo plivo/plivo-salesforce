@@ -1,13 +1,13 @@
 public class PlivoSubAccountFactory {
 	public Integer server_code ;
 
-    public SubAccountMeta meta ;
+    public PlivoSubAccountMeta meta ;
 
     public String error ;
 
     public String api_id ;
 
-    public List<SubAccount> objects;
+    public List<PlivoSubAccount> objects;
 
     public PlivoSubAccountFactory() {
         // empty

@@ -1,11 +1,11 @@
 public class PlivoPhoneNumberSearchFactory {
-    public NumberMeta meta;
+    public PlivoNumberMeta meta;
 
     public String api_id;
 
     public String error;
 
-    public List<PhoneNumber> objects;
+    public List<PlivoPhoneNumber> objects;
 
     public PlivoPhoneNumberSearchFactory() {
         // empty

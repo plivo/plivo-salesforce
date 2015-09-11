@@ -1,5 +1,5 @@
 public class PlivoBuyNumber {
-    public List<NumberStatus> numbers ;
+    public List<PlivoNumberStatus> numbers ;
 
     public String status ;
 
