@@ -1,4 +1,4 @@
-public class PlivoMessageMeta {
+public class PlivoMDRMeta {
     public String previous ;
 
     public Integer total_count ;
@@ -9,7 +9,7 @@ public class PlivoMessageMeta {
 
     public String next ;
 
-    public PlivoMessageMeta() {
+    public PlivoMDRMeta() {
         // empty
     }
 

@@ -348,22 +348,22 @@ public class PlivoRestApi{
 
     // Messages
     // Send a Message
-    public PlivoMessageResponse sendMessage(Map<String, String> parameters){
+    public PlivoMessage sendMessage(Map<String, String> parameters){
         // System.debug('inside sendMessage');
-        return (PlivoMessageResponse)JSON.deserialize(request('POST', '/Message/', parameters), PlivoMessageResponse.class);
+        return (PlivoMessage)JSON.deserialize(request('POST', '/Message/', parameters), PlivoMessage.class);
     }
 
     // Get Details of a Single Message
-    public PlivoMessage getMessage(Map<String, String> parameters){
+    public PlivoMDR getMessage(Map<String, String> parameters){
         String message_uuid = parameters.get('message_uuid');
         String resource_placeHolder = '/Message/{0}/';
         List<String> resource_fillers = new String[]{message_uuid};
         String resource = String.format(resource_placeHolder,resource_fillers);
-        return (PlivoMessage)JSON.deserialize(request('GET', resource , new Map<String, String>()), PlivoMessage.class);
+        return (PlivoMDR)JSON.deserialize(request('GET', resource , new Map<String, String>()), PlivoMDR.class);
     }
 
     // Get Details of All Messages
-    public PlivoMessageFactory getMessages(Map<String, String> parameters){
-        return (PlivoMessageFactory)JSON.deserialize(request('GET', '/Message/', parameters), PlivoMessageFactory.class);
+    public PlivoMDRFactory getMessages(Map<String, String> parameters){
+        return (PlivoMDRFactory)JSON.deserialize(request('GET', '/Message/', parameters), PlivoMDRFactory.class);
     }
 }

@@ -1,16 +1,16 @@
-public class PlivoMessageFactory {
+public class PlivoMDRFactory {
 
 	public Integer server_code ;
 
-    public MessageMeta meta ;
+    public MDRMeta meta ;
 
     public String api_id ;
 
-    public List<Message> objects ;
+    public List<MDR> objects ;
 
     public String error;
 
-    public PlivoMessageFactory() {
+    public PlivoMDRFactory() {
         // empty
     }
 
