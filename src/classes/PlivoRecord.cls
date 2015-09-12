@@ -1,21 +1,23 @@
 public class PlivoRecord {
 	public Integer server_code ;
 
-    public String resp_url;
+    public String url;
 
-    public String resp_message;
+    public String message;
 
-    public String resp_error;
+    public String error;
 
     public String api_id;
+
+    public String recording_id;
 
     public PlivoRecord() {
         // empty
     }
 
 	public override String toString() {
-		return 'PlivoRecord [\n serverCode=' + server_code + ',\n url=' + resp_url
-				+ ',\n message=' + resp_message + ',\n error=' + resp_error + ',\n api_id='
+		return 'PlivoRecord [\n serverCode=' + server_code + ',\n url=' + url
+				+ ',\n message=' + message + ',\n recording_id =' + recording_id + ',\n error=' + error + ',\n api_id='
 				+ api_id + '\n]';
 	}
 }

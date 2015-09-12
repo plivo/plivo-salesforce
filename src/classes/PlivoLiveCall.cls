@@ -3,7 +3,7 @@ public class PlivoLiveCall {
 
     public String direction ;
 
-    public String from_number ;
+    public String from ;
 
     public String call_status ;
 
@@ -17,7 +17,7 @@ public class PlivoLiveCall {
 
     public String session_start ;
 
-    public String resp_error ;
+    public String error ;
 
     public PlivoLiveCall() {
         // empty
@@ -25,10 +25,10 @@ public class PlivoLiveCall {
 
 	public override String toString() {
 		return 'PlivoLiveCall [\n serverCode=' + server_code + ',\n direction='
-				+ direction + ',\n from=' + from_number + ',\n callStatus=' + call_status
+				+ direction + ',\n from=' + from + ',\n callStatus=' + call_status
 				+ ',\n apiId=' + api_id + ',\n to=' + to + ',\n callerName='
 				+ caller_name + ',\n callUuuid=' + call_uuid + ',\n sessionStart='
-				+ session_start + ',\n error=' + resp_error + '\n]';
+				+ session_start + ',\n error=' + error + '\n]';
 	}
 
 }
