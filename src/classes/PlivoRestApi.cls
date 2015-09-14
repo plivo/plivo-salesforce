@@ -74,6 +74,9 @@ public class PlivoRestApi{
                 res = http.send(req);
                 // System.debug('status code:'+res.getStatusCode());
                 // System.debug('res body:'+res.getBody());
+                if (res.getBody() == '') {
+                    res.setBody('{\n"message": ""\n}');
+                }
             }
         } catch( CalloutException e){
             throw new PlivoException(e.getStackTraceString());

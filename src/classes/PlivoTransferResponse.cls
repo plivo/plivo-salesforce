@@ -3,7 +3,7 @@ public class PlivoTransferResponse {
 
     public String message ;
     
-    public List<String> calls ;
+    public List<String> call_uuids ;
     
     public String error ;
     
@@ -15,6 +15,6 @@ public class PlivoTransferResponse {
 
     public override String toString() {
         return 'GenericResponse [\n serverCode=' + server_code + ',\n message='
-                + message + 'Call UUIDs=' + calls + ',\n error=' + error + ',\n apiId=' + api_id + '\n]';
+                + message + ',\n call uuids=' + call_uuids + ',\n error=' + error + ',\n apiId=' + api_id + '\n]';
     }
 }
