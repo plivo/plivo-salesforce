@@ -239,12 +239,12 @@ public class PlivoRestApi{
     }
 
     // Transfer a Call
-    public PlivoGenericResponse transferCall(Map<String, String> parameters) {
+    public PlivoTransferResponse transferCall(Map<String, String> parameters) {
         String call_uuid = parameters.get('call_uuid');
         String resource_placeHolder = '/Call/{0}/';
         List<String> resource_fillers = new String[]{call_uuid};
         String resource = String.format(resource_placeHolder,resource_fillers);
-        return (PlivoGenericResponse)JSON.deserialize(request('POST', resource, parameters), PlivoGenericResponse.class);
+        return (PlivoTransferResponse)JSON.deserialize(request('POST', resource, parameters), PlivoTransferResponse.class);
     }
 
     // Record a Call

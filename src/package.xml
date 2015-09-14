@@ -48,6 +48,7 @@
       <members>PlivoSubAccount</members>
       <members>PlivoSubAccountFactory</members>
       <members>PlivoSubAccountMeta</members>
+      <members>PlivoTransferResponse</members>
       <members>PlivoWaitXML</members>
       <name>ApexClass</name>
     </types>
