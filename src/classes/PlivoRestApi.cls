@@ -90,6 +90,12 @@ public class PlivoRestApi{
         if (jsonn.contains('limit')){
             jsonn = jsonn.replace('\"limit\": ', '\"limitt\": ');
         }
+        if (jsonn.contains('number')){
+            jsonn = jsonn.replace('\"number\": ', '\"plivo_number\": ');
+        }
+        if (jsonn.contains('from')){
+            jsonn = jsonn.replace('\"from\": ', '\"from_number\": ');
+        }
         // System.debug('final json : ' + jsonn);
         return jsonn;
     }
