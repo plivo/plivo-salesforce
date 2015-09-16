@@ -15,8 +15,8 @@ public class PlivoMessage {
     }
 
     public override String toString() {
-        return 'PlivoMessageResponse [serverCode=' + server_code + ', message='
-                + message + ', messageUuids=' + message_uuid + ', error='
-                + error + ', apiId=' + api_id + ']';
+        return 'PlivoMessageResponse [\n serverCode=' + server_code + ',\n message='
+                + message + ',\n messageUuids=' + message_uuid + ',\n error='
+                + error + ',\n apiId=' + api_id + '\n]';
     }
 }
