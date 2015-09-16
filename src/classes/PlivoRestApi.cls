@@ -115,8 +115,8 @@ public class PlivoRestApi{
     }
 
     // Get details of all subaccounts
-    public PlivoSubAccountFactory getSubaccounts() {
-        return (PlivoSubAccountFactory)JSON.deserialize(request('GET', '/Subaccount/', new Map<String, String>()), PlivoSubAccountFactory.class);
+    public PlivoSubAccountFactory getSubaccounts(Map<String, String> parameters) {
+        return (PlivoSubAccountFactory)JSON.deserialize(request('GET', '/Subaccount/', parameters), PlivoSubAccountFactory.class);
     }
 
     // Get details of a single subaccount
