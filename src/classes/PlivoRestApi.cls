@@ -519,7 +519,73 @@ public class PlivoRestApi{
         return (PlivoMDRFactory)JSON.deserialize(request('GET', '/Message/', parameters), PlivoMDRFactory.class);
     }
 
-    // Pricing    
+    // Number
+    // Get Details of all numbers
+    public PlivoNumberSearchFactory getNumbers(Map<String, String> parameters) {
+        return (PlivoNumberSearchFactory)JSON.deserialize(request('GET', '/Number/', parameters), PlivoNumberSearchFactory.class);
+    }
+    
+    // Get Details of a sigle number
+    public PlivoNumberResponse getNumber(Map<String, String> parameters) {
+        String plivo_number = parameters.get('number');
+        String resource_placeHolder = '/Number/{0}/';
+        List<String> resource_fillers = new String[]{plivo_number};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoNumberResponse)JSON.deserialize(request('GET', resource, new Map<String, String>()), PlivoNumberResponse.class);
+    }
+    
+    // Edit details of a single number
+    public PlivoGenericResponse editNumber(Map<String, String> parameters) {
+        String plivo_number = parameters.get('number');
+        String resource_placeHolder = '/Number/{0}/';
+        List<String> resource_fillers = new String[]{plivo_number};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('POST', resource, parameters), PlivoGenericResponse.class);
+    }
+    
+    // Unrent a number
+    public PlivoGenericResponse unRentNumber(Map<String, String> parameters) {
+        String plivo_number = parameters.get('number');
+        String resource_placeHolder = '/Number/{0}/';
+        List<String> resource_fillers = new String[]{plivo_number};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('DELETE', resource, parameters), PlivoGenericResponse.class);
+    }
+    
+    // Link an application to a number
+    public PlivoGenericResponse linkApplicationNumber(Map<String, String> parameters) {
+        String plivo_number = parameters.get('number');
+        String resource_placeHolder = '/Number/{0}/';
+        List<String> resource_fillers = new String[]{plivo_number};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('POST', resource, parameters), PlivoGenericResponse.class);
+    }
+
+    // Unlink an application from a number
+    public PlivoGenericResponse unlinkApplicationNumber(Map<String, String> parameters) {
+        String plivo_number = parameters.get('number');
+        String resource_placeHolder = '/Number/{0}/';
+        List<String> resource_fillers = new String[]{plivo_number};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        parameters.put('app_id', '');
+        return (PlivoGenericResponse)JSON.deserialize(request('POST', resource, parameters), PlivoGenericResponse.class);
+    }
+    
+    // Search for phone numbers
+    public PlivoPhoneNumberSearchFactory searchPhoneNumber(Map<String, String> parameters) {
+        return (PlivoPhoneNumberSearchFactory)JSON.deserialize(request('GET', '/PhoneNumber/', parameters), PlivoPhoneNumberSearchFactory.class);
+    }
+    
+    // Rent a number
+    public PlivoBuyNumber buyPhoneNumber(Map<String, String> parameters) {
+        String plivo_number = parameters.get('number');
+        String resource_placeHolder = '/PhoneNumber/{0}/';
+        List<String> resource_fillers = new String[]{plivo_number};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoBuyNumber)JSON.deserialize(request('POST', resource, parameters), PlivoBuyNumber.class);
+    }
+    
+    // Pricing
     public PlivoPricing getPricing(Map<String, String> parameters) {
         return (PlivoPricing)JSON.deserialize(request('GET', '/Pricing/', parameters), PlivoPricing.class);
     }
