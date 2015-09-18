@@ -623,4 +623,13 @@ public class PlivoRestApi{
         String resource = String.format(resource_placeHolder,resource_fillers);
         return (PlivoGenericResponse)JSON.deserialize(request('DELETE', resource, parameters), PlivoGenericResponse.class);
     }
+
+    // Request
+    public PlivoGenericResponse hangupRequest(Map<String, String> parameters) {
+        String request_uuid = parameters.get('request_uuid');
+        String resource_placeHolder = '/Request/{0}/';
+        List<String> resource_fillers = new String[]{request_uuid};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('DELETE', resource, parameters), PlivoGenericResponse.class);
+    }
 }
