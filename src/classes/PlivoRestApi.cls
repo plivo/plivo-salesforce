@@ -380,7 +380,7 @@ public class PlivoRestApi{
         return (PlivoGenericResponse)JSON.deserialize(request('DELETE', resource, new Map<String, String>()), PlivoGenericResponse.class);
     }
 
-    // Play am essage to a Member in a conference
+    // Play a message to a Member in a conference
     public PlivoGenericResponse speakMember(Map<String, String> parameters) {
         String conference_name = parameters.get('conference_name');
         String member_id = parameters.get('member_id');
@@ -390,6 +390,16 @@ public class PlivoRestApi{
         String text = parameters.get('text');
         parameters.put('text', text);
         return (PlivoGenericResponse)JSON.deserialize(request('POST', resource, new Map<String, String>()), PlivoGenericResponse.class);
+    }
+
+    // Stop playing message to a member in a conference
+    public PlivoGenericResponse stopSpeakMember(Map<String, String> parameters) {
+        String conference_name = parameters.get('conference_name');
+        String member_id = parameters.get('member_id');
+        String resource_placeHolder = '/Conference/{0}/Member/{1}/Speak/';
+        List<String> resource_fillers = new String[]{conference_name,member_id};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('DELETE', resource, new Map<String, String>()), PlivoGenericResponse.class);
     }
 
     // Deaf a Member in a conference
