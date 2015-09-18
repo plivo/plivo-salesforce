@@ -599,4 +599,28 @@ public class PlivoRestApi{
     public PlivoPricing getPricing(Map<String, String> parameters) {
         return (PlivoPricing)JSON.deserialize(request('GET', '/Pricing/', parameters), PlivoPricing.class);
     }
+
+    // Recordings
+    // Get Details of all recordings
+    public PlivoRecordingList getRecordings(Map<String, String> parameters) {
+        return (PlivoRecordingList)JSON.deserialize(request('GET', '/Recording/', parameters), PlivoRecordingList.class);
+    }
+
+    // Get Details of a Single Recording
+    public PlivoRecording getRecording(Map<String, String> parameters) {
+        String recording_id = parameters.get('recording_id');
+        String resource_placeHolder = '/Recording/{0}/';
+        List<String> resource_fillers = new String[]{recording_id};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoRecording)JSON.deserialize(request('GET', resource , new Map<String, String>()), PlivoRecording.class);
+    }
+
+    // Delete a sinlge recording
+    public PlivoGenericResponse deleteRecording(Map<String, String> parameters) {
+        String recording_id = parameters.get('recording_id');
+        String resource_placeHolder = '/Recording/{0}/';
+        List<String> resource_fillers = new String[]{recording_id};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('DELETE', resource, parameters), PlivoGenericResponse.class);
+    }
 }

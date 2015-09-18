@@ -50,6 +50,9 @@
       <members>PlivoPricing</members>
       <members>PlivoRatesPrefixes</members>
       <members>PlivoRecord</members>
+      <members>PlivoRecording</members>
+      <members>PlivoRecordingMeta</members>
+      <members>PlivoRecordingList</members>
       <members>PlivoRecordXML</members>
       <members>PlivoRedirectXML</members>
       <members>PlivoResponse</members>
