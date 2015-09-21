@@ -11,6 +11,8 @@
       <members>PlivoCDR</members>
       <members>PlivoCDRFactory</members>
       <members>PlivoCDRMeta</members>
+      <member>PlivoConference</member>
+      <members>PlivoConferenceMember</members>
       <members>PlivoConferenceXML</members>
       <members>PlivoDialNumberXML</members>
       <members>PlivoDialUserXML</members>
@@ -29,6 +31,7 @@
       <members>PlivoInboundVoicePricing</members>
       <members>PlivoLiveCall</members>
       <members>PlivoLiveCallFactory</members>
+      <members>PlivoLiveConferenceFactory</members>
       <members>PlivoLocalInboundPricing</members>
       <members>PlivoLocalNumberRental</members>
       <members>PlivoLocalOutboundPricing</members>
