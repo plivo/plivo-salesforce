@@ -1,5 +1,5 @@
 public class PlivoLiveCall {
-	public Integer server_code ;
+    public Integer server_code ;
 
     public String direction ;
 
@@ -12,6 +12,8 @@ public class PlivoLiveCall {
     public String to ;
 
     public String caller_name ;
+    
+    public String request_uuid ;
 
     public String call_uuid ;
 
@@ -23,12 +25,12 @@ public class PlivoLiveCall {
         // empty
     }
 
-	public override String toString() {
-		return 'PlivoLiveCall [\n serverCode=' + server_code + ',\n direction='
-				+ direction + ',\n from=' + from_number + ',\n callStatus=' + call_status
-				+ ',\n apiId=' + api_id + ',\n to=' + to + ',\n callerName='
-				+ caller_name + ',\n callUuuid=' + call_uuid + ',\n sessionStart='
-				+ session_start + ',\n error=' + error + '\n]';
-	}
+  public override String toString() {
+    return 'PlivoLiveCall [\n serverCode=' + server_code + ',\n direction=' + direction + ',\n requestuuid='
+            + request_uuid + ',\n from=' + from_number + ',\n callStatus=' + call_status
+        + ',\n apiId=' + api_id + ',\n to=' + to + ',\n callerName='
+        + caller_name + ',\n calluuid=' + call_uuid + ',\n sessionStart='
+        + session_start + ',\n error=' + error + '\n]';
+  }
 
 }
