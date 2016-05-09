@@ -59,8 +59,10 @@ private class TestPlivoAccountApi {
 	    Test.setMock(HttpCalloutMock.class, mock);
         
         PlivoRestApi api = new PlivoRestApi('MAYMFHYZJKMJG0NJG3AG', 'ZDZlNzI4ZDVkNDkzYWIxMzk5NjU1ODksZWYyZeEx', 'v1');
+
+        Map<String, String> params = new Map<String, String> ();
         
-        PlivoSubAccountFactory msg = api.getSubaccounts();
+        PlivoSubAccountFactory msg = api.getSubaccounts(params);
         System.debug(msg);
         System.assertEquals(msg.api_id, '89354925-8268-11e5-a62c-22000afb0fc5');
         System.assertEquals(msg.meta.limitt, 20);
