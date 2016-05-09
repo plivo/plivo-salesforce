@@ -11,9 +11,10 @@
       <members>PlivoCDR</members>
       <members>PlivoCDRFactory</members>
       <members>PlivoCDRMeta</members>
-      <member>PlivoConference</member>
+      <members>PlivoConference</members>
       <members>PlivoConferenceMember</members>
       <members>PlivoConferenceXML</members>
+      <members>PlivoHttpCalloutMockImpl</members>
       <members>PlivoDialNumberXML</members>
       <members>PlivoDialUserXML</members>
       <members>PlivoDialXML</members>
@@ -73,6 +74,11 @@
       <members>PlivoTransferResponse</members>
       <members>PlivoVoiceRates</members>
       <members>PlivoWaitXML</members>
+      <members>TestPlivoAccountApi</members>
+      <members>TestPlivoApplicationApi</members>
+      <members>TestPlivoCallApi</members>
+      <members>TestPlivoEndpointApi</members>
+      <members>TestPlivoMessageApi</members>
       <name>ApexClass</name>
     </types>
     <types>
