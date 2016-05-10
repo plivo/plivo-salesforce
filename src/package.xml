@@ -77,8 +77,11 @@
       <members>TestPlivoAccountApi</members>
       <members>TestPlivoApplicationApi</members>
       <members>TestPlivoCallApi</members>
+      <members>TestPlivoCancelRequestApi</members>
+      <members>TestPlivoConferenceApi</members>
       <members>TestPlivoEndpointApi</members>
       <members>TestPlivoMessageApi</members>
+      <members>TestPlivoNumberApi</members>
       <members>TestPlivoRecordingsApi</members>
       <name>ApexClass</name>
     </types>
