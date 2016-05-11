@@ -75,19 +75,19 @@ public virtual class PlivoElement {
     public String toXML(){
         String xml = '<' + this.tag;
         for (String key : attributes.keySet()) {
-            xml += ' ' + key + '=\'' + attributes.get(key) + '\'';
+            xml += ' ' + key + '="' + attributes.get(key) + '"';
         }
         
         if(this.body != null) {
             xml += '>' + this.body + '</' + this.tag + '>';
         } else if(!this.childTags.isEmpty()) {
-        	xml += '>';
+            xml += '>';
             for (PlivoElement child : childTags) {
                 xml += child.toXML();
             }
             xml += '</' + this.tag + '>';
         } else {
-        	xml += '/>';
+            xml += '/>';
         }
         return xml;
     }
