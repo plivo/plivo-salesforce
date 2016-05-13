@@ -93,6 +93,7 @@
       <members>TestPlivoNumberApi</members>
       <members>TestPlivoPlayXML</members>
       <members>TestPlivoPreAnswerXML</members>
+      <members>TestPlivoPricingApi</members>
       <members>TestPlivoRecordingsApi</members>
       <members>TestPlivoRecordXML</members>
       <members>TestPlivoRedirectXML</members>
