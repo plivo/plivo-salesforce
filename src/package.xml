@@ -51,6 +51,7 @@
       <members>PlivoPhoneNumbers</members>
       <members>PlivoPhoneNumberSearchFactory</members>
       <members>PlivoPlayXML</members>
+      <members>PlivoPreAnswerXML</members>
       <members>PlivoPricing</members>
       <members>PlivoRatesPrefixes</members>
       <members>PlivoRecord</members>
@@ -79,10 +80,24 @@
       <members>TestPlivoCallApi</members>
       <members>TestPlivoCancelRequestApi</members>
       <members>TestPlivoConferenceApi</members>
+      <members>TestPlivoConferenceXML</members>
+      <members>TestPlivoDialXML</members>
+      <members>TestPlivoDialNumberXML</members>
+      <members>TestPlivoDialUserXML</members>
+      <members>TestPlivoDtmfXML</members>
       <members>TestPlivoEndpointApi</members>
+      <members>TestPlivoGetDigitsXML</members>
+      <members>TestPlivoHangupXML</members>
       <members>TestPlivoMessageApi</members>
+      <members>TestPlivoMessageXML</members>
       <members>TestPlivoNumberApi</members>
+      <members>TestPlivoPlayXML</members>
+      <members>TestPlivoPreAnswerXML</members>
       <members>TestPlivoRecordingsApi</members>
+      <members>TestPlivoRecordXML</members>
+      <members>TestPlivoRedirectXML</members>
+      <members>TestPlivoSpeakXML</members>
+      <members>TestPlivoWaitXML</members>
       <name>ApexClass</name>
     </types>
     <types>

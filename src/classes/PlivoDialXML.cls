@@ -136,6 +136,14 @@ public class PlivoDialXML extends PlivoElement {
     }
 
     /**
+     * Set matching key combination for the caller (B leg).
+     * @param digitsMatch
+     */
+    public void setDigitsMatchBLeg(String digitsMatchBLeg) {
+        this.set('digitsMatchBLeg', digitsMatchBLeg);
+    }
+    
+    /**
      * If set to a string, caller name will be set to this
     * string value. Default is current caller name.
      * @param callerName
