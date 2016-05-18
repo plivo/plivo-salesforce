@@ -121,4 +121,12 @@ public class PlivoGetDigitsXML extends PlivoElement {
         this.set('invalidDigitsSound', invalidDigitsSound);
     }
 
+    /**
+     * Log the digits entered
+     * @param log
+     */
+    public void setLog(Boolean log) {
+        this.setBoolean('log', log);
+    }
+
 }

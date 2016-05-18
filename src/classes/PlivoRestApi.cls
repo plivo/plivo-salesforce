@@ -115,8 +115,8 @@ public class PlivoRestApi{
     }
 
     // Get details of all subaccounts
-    public PlivoSubAccountFactory getSubaccounts() {
-        return (PlivoSubAccountFactory)JSON.deserialize(request('GET', '/Subaccount/', new Map<String, String>()), PlivoSubAccountFactory.class);
+    public PlivoSubAccountFactory getSubaccounts(Map<String, String> parameters) {
+        return (PlivoSubAccountFactory)JSON.deserialize(request('GET', '/Subaccount/', parameters), PlivoSubAccountFactory.class);
     }
 
     // Get details of a single subaccount
@@ -321,16 +321,167 @@ public class PlivoRestApi{
         return (PlivoGenericResponse)JSON.deserialize(request('POST', resource, parameters), PlivoGenericResponse.class);
     }
 
-    // Endpoint
+    //Conference
+    // Get Details of all Live conferences
+    public PlivoLiveConferenceFactory getLiveConferences() {
+        return (PlivoLiveConferenceFactory)JSON.deserialize(request('GET', '/Conference/', new Map<String, String>()), PlivoLiveConferenceFactory.class);
+    }
+    
+    // Hangup all conferences
+    public PlivoGenericResponse hangupAllConferences() {
+        return (PlivoGenericResponse)JSON.deserialize(request('DELETE', '/Conference/', new Map<String, String>()), PlivoGenericResponse.class);
+    }
+    
+    // get Details of a single Live conference
+    public PlivoConference getLiveConference(Map<String, String> parameters) {
+        String conference_name = parameters.get('conference_name');
+        String resource_placeHolder = '/Conference/{0}/';
+        List<String> resource_fillers = new String[]{conference_name};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoConference)JSON.deserialize(request('GET', resource, new Map<String, String>()), PlivoConference.class);
+    }
+    
+    // Hangup a conference
+    public PlivoGenericResponse hangupConference(Map<String, String> parameters) {
+        String conference_name = parameters.get('conference_name');
+        String resource_placeHolder = '/Conference/{0}/';
+        List<String> resource_fillers = new String[]{conference_name};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('DELETE', resource, new Map<String, String>()), PlivoGenericResponse.class);
+    }
+    
+    // Hangup a member in a conference
+    public PlivoGenericResponse hangupMember(Map<String, String> parameters) {
+        String conference_name = parameters.get('conference_name');
+        String member_id = parameters.get('member_id');
+        String resource_placeHolder = '/Conference/{0}/Member/{1}/';
+        List<String> resource_fillers = new String[]{conference_name,member_id};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('DELETE', resource, new Map<String, String>()), PlivoGenericResponse.class);
+    }
+    
+    // Play music to a member in a conference
+    public PlivoGenericResponse playMember(Map<String, String> parameters) {
+        String conference_name = parameters.get('conference_name');
+        String member_id = parameters.get('member_id');
+        String resource_placeHolder = '/Conference/{0}/Member/{1}/Play/';
+        List<String> resource_fillers = new String[]{conference_name,member_id};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('POST', resource, new Map<String, String>()), PlivoGenericResponse.class);
+    }
+    
+    // Stop playing music to a member in a conference
+    public PlivoGenericResponse stopPlayMember(Map<String, String> parameters) {
+        String conference_name = parameters.get('conference_name');
+        String member_id = parameters.get('member_id');
+        String resource_placeHolder = '/Conference/{0}/Member/{1}/Play/';
+        List<String> resource_fillers = new String[]{conference_name,member_id};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('DELETE', resource, new Map<String, String>()), PlivoGenericResponse.class);
+    }
 
+    // Play a message to a Member in a conference
+    public PlivoGenericResponse speakMember(Map<String, String> parameters) {
+        String conference_name = parameters.get('conference_name');
+        String member_id = parameters.get('member_id');
+        String resource_placeHolder = '/Conference/{0}/Member/{1}/Speak/';
+        List<String> resource_fillers = new String[]{conference_name,member_id};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        String text = parameters.get('text');
+        parameters.put('text', text);
+        return (PlivoGenericResponse)JSON.deserialize(request('POST', resource, new Map<String, String>()), PlivoGenericResponse.class);
+    }
+
+    // Stop playing message to a member in a conference
+    public PlivoGenericResponse stopSpeakMember(Map<String, String> parameters) {
+        String conference_name = parameters.get('conference_name');
+        String member_id = parameters.get('member_id');
+        String resource_placeHolder = '/Conference/{0}/Member/{1}/Speak/';
+        List<String> resource_fillers = new String[]{conference_name,member_id};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('DELETE', resource, new Map<String, String>()), PlivoGenericResponse.class);
+    }
+
+    // Deaf a Member in a conference
+    public PlivoGenericResponse deafMember(Map<String, String> parameters) {
+        String conference_name = parameters.get('conference_name');
+        String member_id = parameters.get('member_id');
+        String resource_placeHolder = '/Conference/{0}/Member/{1}/Deaf/';
+        List<String> resource_fillers = new String[]{conference_name,member_id};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('POST', resource, new Map<String, String>()), PlivoGenericResponse.class);
+    }
+    
+    // Undeaf a Member in a conference
+    public PlivoGenericResponse undeafMember(Map<String, String> parameters) {
+        String conference_name = parameters.get('conference_name');
+        String member_id = parameters.get('member_id');
+        String resource_placeHolder = '/Conference/{0}/Member/{1}/Deaf/';
+        List<String> resource_fillers = new String[]{conference_name,member_id};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('DELETE', resource, new Map<String, String>()), PlivoGenericResponse.class);
+    }
+    
+    // Mute a member in a conference
+    public PlivoGenericResponse muteMember(Map<String, String> parameters) {
+        String conference_name = parameters.get('conference_name');
+        String member_id = parameters.get('member_id');
+        String resource_placeHolder = '/Conference/{0}/Member/{1}/Mute/';
+        List<String> resource_fillers = new String[]{conference_name,member_id};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('POST', resource, new Map<String, String>()), PlivoGenericResponse.class);
+    }
+
+    // Unmute a Member in a conference
+    public PlivoGenericResponse unmuteMember(Map<String, String> parameters) {
+        String conference_name = parameters.get('conference_name');
+        String member_id = parameters.get('member_id');
+        String resource_placeHolder = '/Conference/{0}/Member/{1}/Mute/';
+        List<String> resource_fillers = new String[]{conference_name,member_id};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('DELETE', resource, new Map<String, String>()), PlivoGenericResponse.class);
+    }
+
+    // Kick a Member out of a conference
+    public PlivoGenericResponse kickMember(Map<String, String> parameters) {
+        String conference_name = parameters.get('conference_name');
+        String member_id = parameters.get('member_id');
+        String resource_placeHolder = '/Conference/{0}/Member/{1}/Kick/';
+        List<String> resource_fillers = new String[]{conference_name,member_id};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('POST', resource, new Map<String, String>()), PlivoGenericResponse.class);
+    }
+    
+    // Start recording a conference
+    public PlivoRecord recordConference(Map<String, String> parameters) {
+        String conference_name = parameters.get('conference_name');
+        String resource_placeHolder = '/Conference/{0}/Record/';
+        List<String> resource_fillers = new String[]{conference_name};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoRecord)JSON.deserialize(request('POST', resource, parameters), PlivoRecord.class);
+    }
+    
+    // Stop Recording a conference
+    public PlivoGenericResponse stopRecordConference(Map<String, String> parameters) {
+        String conference_name = parameters.get('conference_name');
+        String resource_placeHolder = '/Conference/{0}/Record/';
+        List<String> resource_fillers = new String[]{conference_name};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('DELETE', resource, new Map<String, String>()),PlivoGenericResponse.class);
+    }    
+
+    // Endpoint
+    // Get Details of all Endpoints
     public PlivoEndpointFactory getEndpoints(Map<String, String> parameters) {
         return (PlivoEndpointFactory)JSON.deserialize(request('GET', '/Endpoint/', parameters), PlivoEndpointFactory.class);
     }
 
+    // Create a new Endpoint
     public PlivoEndpoint createEndpoint(Map<String, String> parameters) {
         return (PlivoEndpoint)JSON.deserialize(request('POST', '/Endpoint/', parameters), PlivoEndpoint.class);
     }
-
+    
+    // Get details of a single endpoint
     public PlivoEndpoint getEndpoint(Map<String, String> parameters) {
         String endpoint_id = parameters.get('endpoint_id');
         String resource_placeHolder = '/Endpoint/{0}/';
@@ -338,7 +489,8 @@ public class PlivoRestApi{
         String resource = String.format(resource_placeHolder,resource_fillers);
         return (PlivoEndpoint)JSON.deserialize(request('GET', resource, new Map<String, String>()), PlivoEndpoint.class);
     }
-
+    
+    // Edit an Endpoint
     public PlivoGenericResponse editEndpoint(Map<String, String> parameters) {
         String endpoint_id = parameters.get('endpoint_id');
         String resource_placeHolder = '/Endpoint/{0}/';
@@ -346,7 +498,8 @@ public class PlivoRestApi{
         String resource = String.format(resource_placeHolder,resource_fillers);
         return (PlivoGenericResponse)JSON.deserialize(request('POST', resource, parameters), PlivoGenericResponse.class);
     }
-
+    
+    // Delete an Endpoint
     public PlivoGenericResponse deleteEndpoint(Map<String, String> parameters) {
         String endpoint_id = parameters.get('endpoint_id');
         String resource_placeHolder = '/Endpoint/{0}/';
@@ -374,5 +527,109 @@ public class PlivoRestApi{
     // Get Details of All Messages
     public PlivoMDRFactory getMessages(Map<String, String> parameters){
         return (PlivoMDRFactory)JSON.deserialize(request('GET', '/Message/', parameters), PlivoMDRFactory.class);
+    }
+
+    // Number
+    // Get Details of all numbers
+    public PlivoNumberSearchFactory getNumbers(Map<String, String> parameters) {
+        return (PlivoNumberSearchFactory)JSON.deserialize(request('GET', '/Number/', parameters), PlivoNumberSearchFactory.class);
+    }
+    
+    // Get Details of a sigle number
+    public PlivoNumberResponse getNumber(Map<String, String> parameters) {
+        String plivo_number = parameters.get('number');
+        String resource_placeHolder = '/Number/{0}/';
+        List<String> resource_fillers = new String[]{plivo_number};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoNumberResponse)JSON.deserialize(request('GET', resource, new Map<String, String>()), PlivoNumberResponse.class);
+    }
+    
+    // Edit details of a single number
+    public PlivoGenericResponse editNumber(Map<String, String> parameters) {
+        String plivo_number = parameters.get('number');
+        String resource_placeHolder = '/Number/{0}/';
+        List<String> resource_fillers = new String[]{plivo_number};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('POST', resource, parameters), PlivoGenericResponse.class);
+    }
+    
+    // Unrent a number
+    public PlivoGenericResponse unRentNumber(Map<String, String> parameters) {
+        String plivo_number = parameters.get('number');
+        String resource_placeHolder = '/Number/{0}/';
+        List<String> resource_fillers = new String[]{plivo_number};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('DELETE', resource, parameters), PlivoGenericResponse.class);
+    }
+    
+    // Link an application to a number
+    public PlivoGenericResponse linkApplicationNumber(Map<String, String> parameters) {
+        String plivo_number = parameters.get('number');
+        String resource_placeHolder = '/Number/{0}/';
+        List<String> resource_fillers = new String[]{plivo_number};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('POST', resource, parameters), PlivoGenericResponse.class);
+    }
+
+    // Unlink an application from a number
+    public PlivoGenericResponse unlinkApplicationNumber(Map<String, String> parameters) {
+        String plivo_number = parameters.get('number');
+        String resource_placeHolder = '/Number/{0}/';
+        List<String> resource_fillers = new String[]{plivo_number};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        parameters.put('app_id', '');
+        return (PlivoGenericResponse)JSON.deserialize(request('POST', resource, parameters), PlivoGenericResponse.class);
+    }
+    
+    // Search for phone numbers
+    public PlivoPhoneNumberSearchFactory searchPhoneNumber(Map<String, String> parameters) {
+        return (PlivoPhoneNumberSearchFactory)JSON.deserialize(request('GET', '/PhoneNumber/', parameters), PlivoPhoneNumberSearchFactory.class);
+    }
+    
+    // Rent a number
+    public PlivoBuyNumber buyPhoneNumber(Map<String, String> parameters) {
+        String plivo_number = parameters.get('number');
+        String resource_placeHolder = '/PhoneNumber/{0}/';
+        List<String> resource_fillers = new String[]{plivo_number};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoBuyNumber)JSON.deserialize(request('POST', resource, parameters), PlivoBuyNumber.class);
+    }
+    
+    // Pricing
+    public PlivoPricing getPricing(Map<String, String> parameters) {
+        return (PlivoPricing)JSON.deserialize(request('GET', '/Pricing/', parameters), PlivoPricing.class);
+    }
+
+    // Recordings
+    // Get Details of all recordings
+    public PlivoRecordingList getRecordings(Map<String, String> parameters) {
+        return (PlivoRecordingList)JSON.deserialize(request('GET', '/Recording/', parameters), PlivoRecordingList.class);
+    }
+
+    // Get Details of a Single Recording
+    public PlivoRecording getRecording(Map<String, String> parameters) {
+        String recording_id = parameters.get('recording_id');
+        String resource_placeHolder = '/Recording/{0}/';
+        List<String> resource_fillers = new String[]{recording_id};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoRecording)JSON.deserialize(request('GET', resource , new Map<String, String>()), PlivoRecording.class);
+    }
+
+    // Delete a sinlge recording
+    public PlivoGenericResponse deleteRecording(Map<String, String> parameters) {
+        String recording_id = parameters.get('recording_id');
+        String resource_placeHolder = '/Recording/{0}/';
+        List<String> resource_fillers = new String[]{recording_id};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('DELETE', resource, parameters), PlivoGenericResponse.class);
+    }
+
+    // Request
+    public PlivoGenericResponse hangupRequest(Map<String, String> parameters) {
+        String request_uuid = parameters.get('request_uuid');
+        String resource_placeHolder = '/Request/{0}/';
+        List<String> resource_fillers = new String[]{request_uuid};
+        String resource = String.format(resource_placeHolder,resource_fillers);
+        return (PlivoGenericResponse)JSON.deserialize(request('DELETE', resource, parameters), PlivoGenericResponse.class);
     }
 }

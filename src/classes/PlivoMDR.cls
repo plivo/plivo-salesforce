@@ -1,7 +1,5 @@
 public class PlivoMDR {
-    public String cloud_rate ;
-
-    public String carrier_rate ;
+    public Integer server_code;
 
     public String message_direction ;
 
@@ -33,7 +31,7 @@ public class PlivoMDR {
         // empty
     }
 
-	public override String toString() {
-		return 'PlivoMessage [\n cloudRate=' + cloud_rate + ',\n carrierRate=' + carrier_rate + ',\n messageDirection=' + message_direction + ',\n toNumber=' + to_number + ',\n messageState=' + message_state + ',\n totalAmount=' + total_amount + ',\n fromNumber=' + from_number + ',\n messageUUID=' + message_uuid + ',\n messageTime=' + message_time + ',\n resourceUri=' + resource_uri+ ',\n messageType=' + message_type + ',\n totalRate=' + total_rate + ',\n units=' + units + ',\n error=' + error + ',\n apiId=' + api_id + '\n]';
-	}
+  public override String toString() {
+    return 'ServerCode=' + server_code + ' PlivoMessage [\n messageDirection=' + message_direction + ',\n toNumber=' + to_number + ',\n messageState=' + message_state + ',\n totalAmount=' + total_amount + ',\n fromNumber=' + from_number + ',\n messageUUID=' + message_uuid + ',\n messageTime=' + message_time + ',\n resourceUri=' + resource_uri+ ',\n messageType=' + message_type + ',\n totalRate=' + total_rate + ',\n units=' + units + ',\n error=' + error + ',\n apiId=' + api_id + '\n]';
+  }
 }

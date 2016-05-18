@@ -1,5 +1,5 @@
 public class PlivoCDR {
-	public Integer server_code ;
+    public Integer server_code ;
 
     public Integer bill_duration ;
 
@@ -19,6 +19,10 @@ public class PlivoCDR {
 
     public String from_number ;
 
+    public String answer_time ;
+    
+    public String initiation_time ;
+    
     public String end_time ;
 
     public String call_uuid ;
@@ -33,16 +37,17 @@ public class PlivoCDR {
         // empty
     }
 
-	public override String toString() {
-		return 'PlivoCDR [\n serverCode=' + server_code + ',\n billDuration='
-				+ bill_duration + ',\n billedDuration=' + billed_duration
-				+ ',\n callDuration=' + call_duration + ',\n totalAmount='
-				+ total_amount + ',\n parentCallUUID=' + parent_call_uuid
-				+ ',\n callDirection=' + call_direction + ',\n toNumber=' + to_number
-				+ ',\n totalRate=' + total_rate + ',\n fromNumber=' + from_number
-				+ ',\n endTime=' + end_time + ',\n callUUID=' + call_uuid
-				+ ',\n resourceUri=' + resource_uri + ',\n error=' + error
-				+ ',\n apiId=' + api_id + '\n]';
-	}
+  public override String toString() {
+    return 'PlivoCDR [\n serverCode=' + server_code + ',\n billDuration='
+        + bill_duration + ',\n billedDuration=' + billed_duration
+        + ',\n callDuration=' + call_duration + ',\n totalAmount='
+        + total_amount + ',\n parentCallUUID=' + parent_call_uuid
+        + ',\n callDirection=' + call_direction + ',\n toNumber=' + to_number
+        + ',\n totalRate=' + total_rate + ',\n fromNumber=' + from_number
+        + ', answerTime=' + answer_time + ',\n initiationTime=' + initiation_time
+        + ',\n endTime=' + end_time + ',\n callUUID=' + call_uuid
+        + ',\n resourceUri=' + resource_uri + ',\n error=' + error
+        + ',\n apiId=' + api_id + '\n]';
+  }
 
 }

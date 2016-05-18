@@ -11,7 +11,10 @@
       <members>PlivoCDR</members>
       <members>PlivoCDRFactory</members>
       <members>PlivoCDRMeta</members>
+      <members>PlivoConference</members>
+      <members>PlivoConferenceMember</members>
       <members>PlivoConferenceXML</members>
+      <members>PlivoHttpCalloutMockImpl</members>
       <members>PlivoDialNumberXML</members>
       <members>PlivoDialUserXML</members>
       <members>PlivoDialXML</members>
@@ -25,8 +28,14 @@
       <members>PlivoGetDigits</members>
       <members>PlivoGetDigitsXML</members>
       <members>PlivoHangupXML</members>
+      <members>PlivoInboundSmsPricing</members>
+      <members>PlivoInboundVoicePricing</members>
       <members>PlivoLiveCall</members>
       <members>PlivoLiveCallFactory</members>
+      <members>PlivoLiveConferenceFactory</members>
+      <members>PlivoLocalInboundPricing</members>
+      <members>PlivoLocalNumberRental</members>
+      <members>PlivoLocalOutboundPricing</members>
       <members>PlivoMessage</members>
       <members>PlivoMDRFactory</members>
       <members>PlivoMDRMeta</members>
@@ -36,20 +45,60 @@
       <members>PlivoNumberResponse</members>
       <members>PlivoNumberSearchFactory</members>
       <members>PlivoNumberStatus</members>
+      <members>PlivoOutboundSmsPricing</members>
+      <members>PlivoOutboundVoicePricing</members>
       <members>PlivoPhoneNumber</members>
+      <members>PlivoPhoneNumbers</members>
       <members>PlivoPhoneNumberSearchFactory</members>
       <members>PlivoPlayXML</members>
+      <members>PlivoPreAnswerXML</members>
+      <members>PlivoPricing</members>
+      <members>PlivoRatesPrefixes</members>
       <members>PlivoRecord</members>
+      <members>PlivoRecording</members>
+      <members>PlivoRecordingMeta</members>
+      <members>PlivoRecordingList</members>
       <members>PlivoRecordXML</members>
       <members>PlivoRedirectXML</members>
       <members>PlivoResponse</members>
       <members>PlivoRestApi</members>
+      <members>PlivoSipInboundPricing</members>
+      <members>PlivoSipOutboundPricing</members>
+      <members>PlivoSmsRates</members>
       <members>PlivoSpeakXML</members>
       <members>PlivoSubAccount</members>
       <members>PlivoSubAccountFactory</members>
       <members>PlivoSubAccountMeta</members>
+      <members>PlivoTollfreeInboundPricing</members>
+      <members>PlivoTollFreeNumberRental</members>
+      <members>PlivoTollfreeOutboundPricing</members>
       <members>PlivoTransferResponse</members>
+      <members>PlivoVoiceRates</members>
       <members>PlivoWaitXML</members>
+      <members>TestPlivoAccountApi</members>
+      <members>TestPlivoApplicationApi</members>
+      <members>TestPlivoCallApi</members>
+      <members>TestPlivoCancelRequestApi</members>
+      <members>TestPlivoConferenceApi</members>
+      <members>TestPlivoConferenceXML</members>
+      <members>TestPlivoDialXML</members>
+      <members>TestPlivoDialNumberXML</members>
+      <members>TestPlivoDialUserXML</members>
+      <members>TestPlivoDtmfXML</members>
+      <members>TestPlivoEndpointApi</members>
+      <members>TestPlivoGetDigitsXML</members>
+      <members>TestPlivoHangupXML</members>
+      <members>TestPlivoMessageApi</members>
+      <members>TestPlivoMessageXML</members>
+      <members>TestPlivoNumberApi</members>
+      <members>TestPlivoPlayXML</members>
+      <members>TestPlivoPreAnswerXML</members>
+      <members>TestPlivoPricingApi</members>
+      <members>TestPlivoRecordingsApi</members>
+      <members>TestPlivoRecordXML</members>
+      <members>TestPlivoRedirectXML</members>
+      <members>TestPlivoSpeakXML</members>
+      <members>TestPlivoWaitXML</members>
       <name>ApexClass</name>
     </types>
     <types>

@@ -215,28 +215,4 @@ public class PlivoConferenceXML extends PlivoElement {
     	this.set('recordFileFormat', format);
     }
 
-    /**
-     * Set the type of transcription
-     * @param transcriptionType
-     */
-    public void setTranscriptionType(String transcriptionType) {
-    	this.set('transcriptionType', transcriptionType);
-    }
-
-    /**
-     * Set the http method for sending params to transcriptionUrl
-     * @param transcriptionMethod
-     */
-    public void setTranscriptionMethod(String transcriptionMethod) {
-    	this.set('transcriptionMethod', transcriptionMethod);
-    }
-
-    /**
-     * Set the url for receiving transcription
-     * @param transcriptionUrl
-     */
-    public void setTranscriptionUrl(String transcriptionUrl) {
-    	this.set('transcriptionUrl', transcriptionUrl);
-    }
-
 }

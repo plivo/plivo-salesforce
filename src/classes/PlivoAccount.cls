@@ -1,4 +1,8 @@
 public class PlivoAccount {
+    public Integer server_code ;
+    
+    public String account_type;
+    
     public String city ;
     
     public String name ;
@@ -15,7 +19,7 @@ public class PlivoAccount {
     
     public String api_id ;
     
-    public String postpaid ;
+    public String billing_mode ;
     
     public String state ;
     
@@ -27,15 +31,17 @@ public class PlivoAccount {
     
     public String resource_uri ;
     
+    public Boolean auto_recharge;
+    
     public PlivoAccount() {
         // empty
     }
     
     public override String toString() {
-        return 'Account [city=' + city + ', name=' + name + ', cashCredits='
+        return 'ServerCode =' + server_code + ' Account [accountType =' + account_type + ', city=' + city + ', name=' + name + ', cashCredits='
                 + cash_credits + ', created=' + created + ', enabled=' + enabled
                 + ', modified=' + modified + ', error=' + error + ', apiId='
-                + api_id + ', postpaid=' + postpaid + ', state=' + state
+                + api_id + ', billingMode=' + billing_mode + ', auto_recharge=' + auto_recharge + ', state=' + state
                 + ', address=' + address + ', timezone=' + timezone
                 + ', authID=' + auth_id + ', resourceURI=' + resource_uri + ']';
     }

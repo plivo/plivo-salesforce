@@ -17,14 +17,6 @@ public class PlivoDialUserXML extends PlivoElement {
     }
 
     /**
-     * specify if you need inband (default = rfc2833)
-     * @param sendDigitsMode
-     */
-    public void setSendDigitsMode(String sendDigitsMode) {
-        this.set('sendDigitsMode', sendDigitsMode);
-    }
-
-    /**
      * Key to press after connecting to the number
      * @param sendDigits
      */
@@ -40,5 +32,13 @@ public class PlivoDialUserXML extends PlivoElement {
     public void setSendOnPreanswer(Boolean sendOnPreanswer) {
         this.setBoolean('sendOnPreanswer', sendOnPreanswer);
     }
+    
+    /**
+     * List of SIP headers to send separated by comma.
+     * @param setSipHeaders
+     */
+    public void setSipHeaders(String sipHeaders) {
+        this.set('sipHeaders', sipHeaders);
+    }    
 
 }

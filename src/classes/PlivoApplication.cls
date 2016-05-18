@@ -1,5 +1,5 @@
 public class PlivoApplication {
-	public Integer server_code ;
+  public Integer server_code ;
 
     public String fallback_method ;
 
@@ -8,8 +8,18 @@ public class PlivoApplication {
     public String app_name ;
 
     public Boolean production_app ;
+    
+    public Boolean default_endpoint_app;
 
     public String app_id ;
+    
+    public String sip_uri;
+    
+    public Boolean enabled ;
+    
+    public Boolean public_uri;
+    
+    public String sub_account ;
 
     public String hangup_url ;
 
@@ -37,17 +47,17 @@ public class PlivoApplication {
         // empty
     }
 
-	public override String toString() {
-		return 'PlivoApplication [serverCode=' + server_code + ', fallbackMethod='
-				+ fallback_method + ', isDefaultApplication='
-				+ default_app + ', applicationName=' + app_name
-				+ ', isProductionApplication=' + production_app
-				+ ', applicationID=' + app_id + ', hangupUrl='
-				+ hangup_url + ', answerUrl=' + answer_url + ', messageUrl='
-				+ message_url + ', resourceUri=' + resource_uri
-				+ ', answerMethod=' + answer_method + ', hangupMethod='
-				+ hangup_method + ', messageMethod=' + message_method
-				+ ', fallbackAnswerUrl=' + fallback_answer_url + ', error='
-				+ error + ', apiId=' + api_id + ', message=' + message + ']';
-	}
+  public override String toString() {
+    return 'PlivoApplication [serverCode=' + server_code + ', subaccount=' + sub_account
+            + ', fallbackMethod='+ fallback_method + ', isDefaultApplication='
+        + default_app + ', applicationName=' + app_name + ', enabled=' + enabled
+        + ', isProductionApplication=' + production_app + ', isDefaultEndpointApplication= ' + default_endpoint_app 
+        + ', publicuri=' + public_uri + ', applicationID=' + app_id + ', sipuri= ' + sip_uri + ', hangupUrl='
+        + hangup_url + ', answerUrl=' + answer_url + ', messageUrl='
+        + message_url + ', resourceUri=' + resource_uri
+        + ', answerMethod=' + answer_method + ', hangupMethod='
+        + hangup_method + ', messageMethod=' + message_method
+        + ', fallbackAnswerUrl=' + fallback_answer_url + ', error='
+        + error + ', apiId=' + api_id + ', message=' + message + ']';
+  }
 }
